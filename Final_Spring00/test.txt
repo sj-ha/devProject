@@ -1,0 +1,19 @@
+abcdef
+qhgml test
+aaaa
+<<<<<<< HEAD
+soojin test3
+=======
+soojin test2
+<<<<<<< HEAD
+seogangmin test commit2
+>>>>>>> branch 'main' of https://github.com/hjht18/FinalProject
+=======
+seogangmin test commit2
+<<<<<<< HEAD
+
+=======
+
+bohee test3
+>>>>>>> branch 'main' of https://github.com/hjht18/FinalProject
+>>>>>>> branch 'main' of https://github.com/hjht18/FinalProject
