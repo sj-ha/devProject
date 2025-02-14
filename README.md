@@ -1,4 +1,4 @@
-####### WeTravel 3팀 프로젝트 구동 Readme #######
+####### WeTravel 프로젝트 구동 Readme #######
 
 WeTravel 웹사이트를 띄우기 위해서는 
 
@@ -37,6 +37,6 @@ WeTravel 웹사이트를 띄우기 위해서는
 
  ### DB에 데이터 넣기
 
-    3팀 FinalProject 테이블 생성 쿼리문.sql 
+    테이블 생성 쿼리문.sql.sql 
 
 	
