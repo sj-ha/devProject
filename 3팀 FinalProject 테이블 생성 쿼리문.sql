@@ -9,12 +9,12 @@ conn final_admin/final_admin;
 
 -- 유저 입력
 
-insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role, zipcode, code) values ('남양주', '중랑구', '남성', 'test', '1.png', '이재학', 'test', '010-1234-1234', '0', '0', user_seq.nextval);
-insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('서울', '금천구', '여성', 'test2',  '2.png', '김보희', 'test2', '010-1234-1234', '0', '0', user_seq.nextval);
-insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('인천', '계양구', '남성', 'test3',  '3.png', '김봉진', 'test3', '010-1234-1234', '0', '0', user_seq.nextval);
-insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('대전', '중구', '여성', 'test4',  '4.png', '하수진', 'test4', '010-1234-1234', '0', '0', user_seq.nextval);
-insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('부산', '남구', '남성', 'test5',  '5.png', '서강민', 'test5', '010-1234-1234', '0', '0', user_seq.nextval);
-insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('노량진', '동구', '여성', 'test6',  '6.png', '김하현', 'test6', '010-1234-1234', '0', '0', user_seq.nextval);
+insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role, zipcode, code) values ('남양주', '중랑구', '남성', 'test', '1.png', '박성화', 'test', '010-1234-1234', '0', '0', user_seq.nextval);
+insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('서울', '금천구', '여성', 'test2',  '2.png', '최하늘', 'test2', '010-1234-1234', '0', '0', user_seq.nextval);
+insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('인천', '계양구', '남성', 'test3',  '3.png', '김동영', 'test3', '010-1234-1234', '0', '0', user_seq.nextval);
+insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('대전', '중구', '여성', 'test4',  '4.png', '유지민', 'test4', '010-1234-1234', '0', '0', user_seq.nextval);
+insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('부산', '남구', '남성', 'test5',  '5.png', '이민형', 'test5', '010-1234-1234', '0', '0', user_seq.nextval);
+insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('노량진', '동구', '여성', 'test6',  '6.png', '최수빈', 'test6', '010-1234-1234', '0', '0', user_seq.nextval);
 insert into users (address_basic, address_detail, gender, id, user_image, name, password, phone_num, role,zipcode, code) values ('테스트', '테스트', '남성', 'test7', '7.png', '테스트', 'test7', '010-1234-1234', '9', '0', user_seq.nextval);
 
 -- 관리자 권한 부여
@@ -42,7 +42,7 @@ drop table MP_FILE;
 CREATE TABLE MP_FILE
 (
     FILE_NO NUMBER,                         --파일 번호
-    ADMIN_NUMBER NUMBER(10) NOT NULL,                    --게시판 번호
+    ADMIN_NUMBER NUMBER(10) NOT NULL,       --게시판 번호
     ORG_FILE_NAME VARCHAR2(260) NOT NULL,   --원본 파일 이름
     STORED_FILE_NAME VARCHAR2(36) NOT NULL, --변경된 파일 이름
     FILE_SIZE NUMBER,                       --파일 크기
@@ -56,18 +56,18 @@ drop sequence SEQ_MP_FILE_NO;
 CREATE SEQUENCE SEQ_MP_FILE_NO START WITH 0 INCREMENT BY 1 NOMAXVALUE NOCACHE minvalue 0;
 COMMIT;
 
-insert into admin VALUES (admin_num.nextval, '관리자_김하현', '위트래블 투어패스 오픈 이벤트', '2021-11-11', '위트래블 쿠폰 오픈 기념 이벤트를 실시하고자 합니다.<br>가고 싶었던 관광지나 소개해준 싶은 관광지를 사연과 함께 작성하여 주시면 됩니다.<br>감사합니다.', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_이재학', '11월 시스템 정기점검 안내', '2021-11-16', '위트래블 투어를 이용해주시는 고객님께 감사드립니다.<br>보다 안정적인 서비스를 제공하기 위해 11월 시스템 정기점검을 실시합니다.<br><br>작업 시간 : 11월 23일(수) 03:00 ~ 06:00(3시간)', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_김봉진', '여행지 베스트 샷 올리기 이벤트', '2021-11-19', '안녕하세요. 위트래블입니다.<br>여행지에서 여행 동행자와 직접 찍은 베스트샷을 올려주세요.<br>채택되신 분에게는 소정의 상품을 드립니다.<br><br>기간: 11월 22일(월) ~ 11월 26일(금)<br>방법: 자유게시판에 글 작성.<br><br>당첨발표일: 11월 29일(월), 공지사항 및 메일 안내 예정', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_하수진', '충청 투어패스 시설사 할인 중단 공지', '2021-11-25', '안녕하세요. 위트래블입니다.<br>충청 투어패스 참여 시설사 중 내부 사정에 따라 할인이 종료된 곳을 아래와 같이 안내드리오니 이용에 불편 없으시도록 참고해 주시기 바랍니다.<br><br>할인 종료 시설<br>1. 만천하스카이워크<br>2.청풍호반 케이블카<br><br>이후로도 신규 관광지와 다양한 혜택으로 즐거운 여행의 길잡이가 되겠습니다.<br>감사합니다.', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_김보희', '여행지 베스트 샷 올리기 이벤트 당첨자 발표','2021-11-29', '여행지 베스트 샷 올리기 이벤트에 참여해주신 모든 분께 감사드립니다.<br>많은 분의 참여 속에서 이벤트 당첨자를 채택했습니다.<br>당첨자 분에게는 메일을 남겨드렸으니 확인해주시길 바랍니다.<br>감사합니다.', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_서강민', '코로나19 관련 영남 투어패스 휴관 시설 공지','2021-11-30', '안녕하세요. 위트래블입니다.<br>코로나19로 인한 휴관중인 자유이용시설 업체를 공지해드립니다.<br>아래 시설들을 확인하시어 여행에 지장 없도록 일정 체크 바랍니다.<br><br>[영남투어패스 휴관 시설 및 기간]<br>1. 경주 동궁원, 기간 미정<br>2. 포항 로보라이프뮤지엄, 기간 미정<br>3. 영덕 정크트릭아트전시관, 12월 24일 ~ 1월 3일<br><br>감사합니다.', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_김하현', '오미크론 변이 관련 격리 조건 변경 공지', '2021-12-01', '안녕하세요. 위트래블입니다.<br>최근 발생된 코로나19 오미크론 변이 바이러스로 인해 국내 격리 조건이 변경되었습니다.<br>해당 변이 바이러스 국내 유입 방지를 위한 정부 제한 조치 안내 드립니다.<br><br>[주요 내용]<br>1. 예방접종완료자 격리면제 제외국가 발 입국자는 예방접종여부와 관계없이 격리면제 적용 제외<br>2. 해외 예방접종완료 격리면제서 소지자, 해외 예방접종완료자 확인서를 소지한 해외 예방접종완료자도 격리면제 제외<br>3. 예방접종완료자 격리면제 제외국가 : 모든 국가/지역<br> 4. 적용기간: 2021년 12월 03일 ~ 2021년 12월 16일 입국자<br><br>위트래블은 안전한 고객님의 여행을 위해 항상 최선을 다하고 있으며, 추가 지침 발생 및 변경 시 별도 공지 안내 드리겠습니다.<br>감사합니다.', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_이재학', '12월 시스템 정기점검 안내', '2021-12-03', '위트래블 투어를 이용해주시는 고객님께 감사드립니다.<br>보다 안정적인 서비스를 제공하기 위해 12월 시스템 정기점검을 실시합니다.<br><br>작업 시간 : 12월 10일(금) 03:00 ~ 06:00(3시간)', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_김보희', 'NH농협카드 결제서비스 일시중단 안내', '2021-12-04', '안녕하세요. 위트래블입니다.<br>NH농협카드 전산 시스템 개편에 따른 온라인 결제서비스가 일시 중단될 예정입니다. <br><br>작업 시간 : 12월 13일(월) 21:00 ~ 06:00(9시간)<br>사유 : 전산 시스템 개편 적용에 따른 온라인(인터넷/모바일 결제) 일시 중단<br><br>감사합니다.', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_하수진', 'KB카드 결제서비스 일시중단 안내', '2021-12-05', '안녕하세요. 위트래블입니다.<br>KB국민카드 차세대시스템 이행에 다른 온라인 결제서비스가 일시 중단될 예정입니다. <br><br>작업 시간 : 12월 14일(화) 21:00 ~ 06:00(9시간)<br>사유 : KB국민카드 차세대시스템 적용에 따른 앱카드/ISP/제휴간편결제 일시중단<br><br>감사합니다.', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_서강민', '(카카오페이) BC카드 시스템 작업으로 인한 서비스 이용 제한 안내', '2021-12-06', '안녕하세요. 위트래블입니다.<br>BC카드 시스템 점검으로 인하여, 카카오페이-BC카드 서비스 이용이 일시적으로 중단될 예정입니다. <br><br>작업 시간 : 12월 14일(화) 21:00 ~ 06:00(9시간)<br>사유 : 네트워크 장비 작업<br><br>감사합니다.', 1);
-insert into admin VALUES (admin_num.nextval, '관리자_김봉진', '개인정보 처리방침 개정관련 사전안내', '2021-12-07', '안녕하세요. 위트래블입니다.<br>개인정보처리방침이 다음과 같이 일괄 최신화 되어 안내드립니다. <br><br>1. 변경사항<br>(1) 회원가입 시점에 수집하는 개인정보 항목 현황을 반영하였으며, 프로필 정보 설정과 관련한 안내를 추가하였습니다.<br>(2)개인정보 수탁업체를 현행화하였습니다.<br><br>2. 변경일자<br>변경된 ‘개인정보 처리방침’은 2022년 01월 01일자로 효력이 발생됩니다.<br><br>3. 이의제기 및 문의<br>변경된 ‘개인정보 처리방침’ 내용에 대한 문의사항이 있으신 경우, 위트래블 고객센터로 접수해 주시면 신속하고 친절하게 안내해드리겠습니다.<br><br>위트래블은 앞으로도 회원님의 개인정보를 보다 안전하게 보호할 것을 약속드리며, 더욱 신뢰받는 서비스로 보답하겠습니다.<br>감사합니다.', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_최수빈', '위트래블 투어패스 오픈 이벤트', '2021-11-11', '위트래블 쿠폰 오픈 기념 이벤트를 실시하고자 합니다.<br>가고 싶었던 관광지나 소개해준 싶은 관광지를 사연과 함께 작성하여 주시면 됩니다.<br>감사합니다.', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_박성화', '11월 시스템 정기점검 안내', '2021-11-16', '위트래블 투어를 이용해주시는 고객님께 감사드립니다.<br>보다 안정적인 서비스를 제공하기 위해 11월 시스템 정기점검을 실시합니다.<br><br>작업 시간 : 11월 23일(수) 03:00 ~ 06:00(3시간)', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_김동영', '여행지 베스트 샷 올리기 이벤트', '2021-11-19', '안녕하세요. 위트래블입니다.<br>여행지에서 여행 동행자와 직접 찍은 베스트샷을 올려주세요.<br>채택되신 분에게는 소정의 상품을 드립니다.<br><br>기간: 11월 22일(월) ~ 11월 26일(금)<br>방법: 자유게시판에 글 작성.<br><br>당첨발표일: 11월 29일(월), 공지사항 및 메일 안내 예정', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_유지민', '충청 투어패스 시설사 할인 중단 공지', '2021-11-25', '안녕하세요. 위트래블입니다.<br>충청 투어패스 참여 시설사 중 내부 사정에 따라 할인이 종료된 곳을 아래와 같이 안내드리오니 이용에 불편 없으시도록 참고해 주시기 바랍니다.<br><br>할인 종료 시설<br>1. 만천하스카이워크<br>2.청풍호반 케이블카<br><br>이후로도 신규 관광지와 다양한 혜택으로 즐거운 여행의 길잡이가 되겠습니다.<br>감사합니다.', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_최하늘', '여행지 베스트 샷 올리기 이벤트 당첨자 발표','2021-11-29', '여행지 베스트 샷 올리기 이벤트에 참여해주신 모든 분께 감사드립니다.<br>많은 분의 참여 속에서 이벤트 당첨자를 채택했습니다.<br>당첨자 분에게는 메일을 남겨드렸으니 확인해주시길 바랍니다.<br>감사합니다.', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_이민형', '코로나19 관련 영남 투어패스 휴관 시설 공지','2021-11-30', '안녕하세요. 위트래블입니다.<br>코로나19로 인한 휴관중인 자유이용시설 업체를 공지해드립니다.<br>아래 시설들을 확인하시어 여행에 지장 없도록 일정 체크 바랍니다.<br><br>[영남투어패스 휴관 시설 및 기간]<br>1. 경주 동궁원, 기간 미정<br>2. 포항 로보라이프뮤지엄, 기간 미정<br>3. 영덕 정크트릭아트전시관, 12월 24일 ~ 1월 3일<br><br>감사합니다.', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_최수빈', '오미크론 변이 관련 격리 조건 변경 공지', '2021-12-01', '안녕하세요. 위트래블입니다.<br>최근 발생된 코로나19 오미크론 변이 바이러스로 인해 국내 격리 조건이 변경되었습니다.<br>해당 변이 바이러스 국내 유입 방지를 위한 정부 제한 조치 안내 드립니다.<br><br>[주요 내용]<br>1. 예방접종완료자 격리면제 제외국가 발 입국자는 예방접종여부와 관계없이 격리면제 적용 제외<br>2. 해외 예방접종완료 격리면제서 소지자, 해외 예방접종완료자 확인서를 소지한 해외 예방접종완료자도 격리면제 제외<br>3. 예방접종완료자 격리면제 제외국가 : 모든 국가/지역<br> 4. 적용기간: 2021년 12월 03일 ~ 2021년 12월 16일 입국자<br><br>위트래블은 안전한 고객님의 여행을 위해 항상 최선을 다하고 있으며, 추가 지침 발생 및 변경 시 별도 공지 안내 드리겠습니다.<br>감사합니다.', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_박성화', '12월 시스템 정기점검 안내', '2021-12-03', '위트래블 투어를 이용해주시는 고객님께 감사드립니다.<br>보다 안정적인 서비스를 제공하기 위해 12월 시스템 정기점검을 실시합니다.<br><br>작업 시간 : 12월 10일(금) 03:00 ~ 06:00(3시간)', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_최하늘', 'NH농협카드 결제서비스 일시중단 안내', '2021-12-04', '안녕하세요. 위트래블입니다.<br>NH농협카드 전산 시스템 개편에 따른 온라인 결제서비스가 일시 중단될 예정입니다. <br><br>작업 시간 : 12월 13일(월) 21:00 ~ 06:00(9시간)<br>사유 : 전산 시스템 개편 적용에 따른 온라인(인터넷/모바일 결제) 일시 중단<br><br>감사합니다.', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_유지민', 'KB카드 결제서비스 일시중단 안내', '2021-12-05', '안녕하세요. 위트래블입니다.<br>KB국민카드 차세대시스템 이행에 다른 온라인 결제서비스가 일시 중단될 예정입니다. <br><br>작업 시간 : 12월 14일(화) 21:00 ~ 06:00(9시간)<br>사유 : KB국민카드 차세대시스템 적용에 따른 앱카드/ISP/제휴간편결제 일시중단<br><br>감사합니다.', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_이민형', '(카카오페이) BC카드 시스템 작업으로 인한 서비스 이용 제한 안내', '2021-12-06', '안녕하세요. 위트래블입니다.<br>BC카드 시스템 점검으로 인하여, 카카오페이-BC카드 서비스 이용이 일시적으로 중단될 예정입니다. <br><br>작업 시간 : 12월 14일(화) 21:00 ~ 06:00(9시간)<br>사유 : 네트워크 장비 작업<br><br>감사합니다.', 1);
+insert into admin VALUES (admin_num.nextval, '관리자_김동영', '개인정보 처리방침 개정관련 사전안내', '2021-12-07', '안녕하세요. 위트래블입니다.<br>개인정보처리방침이 다음과 같이 일괄 최신화 되어 안내드립니다. <br><br>1. 변경사항<br>(1) 회원가입 시점에 수집하는 개인정보 항목 현황을 반영하였으며, 프로필 정보 설정과 관련한 안내를 추가하였습니다.<br>(2)개인정보 수탁업체를 현행화하였습니다.<br><br>2. 변경일자<br>변경된 ‘개인정보 처리방침’은 2022년 01월 01일자로 효력이 발생됩니다.<br><br>3. 이의제기 및 문의<br>변경된 ‘개인정보 처리방침’ 내용에 대한 문의사항이 있으신 경우, 위트래블 고객센터로 접수해 주시면 신속하고 친절하게 안내해드리겠습니다.<br><br>위트래블은 앞으로도 회원님의 개인정보를 보다 안전하게 보호할 것을 약속드리며, 더욱 신뢰받는 서비스로 보답하겠습니다.<br>감사합니다.', 1);
 
 commit;
 
