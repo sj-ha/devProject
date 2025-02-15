@@ -1,4 +1,4 @@
-####### WeTravel 프로젝트 구동 Readme #######
+### WeTravel 프로젝트 구동 Readme
 
 WeTravel 웹사이트를 띄우기 위해서는 
 
