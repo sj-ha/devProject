@@ -2,10 +2,10 @@ sqlplus system/System1234
 
 show user;
 
-create user final_admin identified by final_admin;
+create user c##final_admin identified by final_admin;
 grant all privileges to final_admin;
 
-conn final_admin/final_admin;
+conn c##final_admin/final_admin;
 
 -- 유저 입력
 
