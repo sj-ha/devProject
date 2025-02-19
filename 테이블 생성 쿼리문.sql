@@ -3,7 +3,7 @@ sqlplus system/System1234
 show user;
 
 create user c##final_admin identified by final_admin;
-grant all privileges to final_admin;
+grant all privileges to c##final_admin;
 
 conn c##final_admin/final_admin;
 
